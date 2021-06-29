@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
 
+import React, { useEffect } from "react";
+import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import { Route } from "react-router-dom";
+import Home from "./Home";
+import Register from "./Register";
+import { Paper, Typography, Box } from "@material-ui/core";
+
+import { Switch, useRouteMatch, withRouter } from "react-router";
+import { Header } from "./Header";
+import { useDispatch } from "react-redux";
+import "./App.css";import "./styles.css";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+// class App extends Component {
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// z: https://www.section.io/engineering-education/how-to-setup-nodejs-express-for-react/
+	// function App() {
+
+	// const dispatch = useDispatch();
+
+	// useEffect(() => {
+	// 	dispatch(/*tu coś*/);
+	// }, [dispatch]);
+
+	return (
+		<>
+			<Main />
+		</>
+	);
 }
 
-export default App;
+function Footer() {
+	const nazwa_strony = "Biometria 20/21";
+
+	return (
+		<Navbar fixed="bottom" bg="light">
+			<Typography variant="h6" component="h6">
+				{nazwa_strony}
+			</Typography>
+		</Navbar>
+	);
+}
+
+function Main() {
+	const { path } = useRouteMatch();
+
+	return (
+		<>
+			<Header />
+			<Switch>
+				<Route path={path} exact component={Home} />
+				<Route path={path + "register"} component={Register} />
+			</Switch>
+			<Footer />
+		</>
+	);
+}
+
+
+ 
+
+export default withRouter(App);
