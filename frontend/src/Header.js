@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Avatar } from "@material-ui/core";
+import { Avatar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // import logo from "./images/logo_hagalaz.png";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+// https://www.techomoro.com/how-to-create-a-simple-multi-language-website-with-react/
 
-// https://stackoverflow.com/questions/39999367/how-do-i-reference-a-local-image-in-react
-// Myk z import działa.
-const nazwa_strony = "Projekt zaliczeniowy - Biometria 20/21";
+const siteName = "M. M. PERMUS";
 
-export function Header() {
+const aboutMe_EN = "About me";
+const aboutMe_SE = "Om mig";
+const aboutMe_PL = "O mnie";
+
+const projects_EN = "Projects";
+const projects_SE = "Projekt";
+const projects_PL = "Projekty";
+
+
+
+export function Header(props) {
 	const __selector = useSelector((state) => state.authReducer);
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -45,9 +54,53 @@ export function Header() {
 				<Navbar.Brand href="/">
 					<Container>
 						{/* <img src={logo} width="50" height="50" alt="" /> */}
-						<h3>{nazwa_strony}</h3>
+						<Typography variant="h4" component="h4">
+							{siteName}
+						</Typography>
 					</Container>
 				</Navbar.Brand>
+
+				<Navbar.Brand href="/">
+					<Container>
+						<Typography variant="h6" component="h6">
+							{siteName}
+						</Typography>
+					</Container>
+				</Navbar.Brand>
+
+				<Navbar.Brand href="/">
+					<Container>
+						<Typography variant="h6" component="h6">
+							{siteName}
+						</Typography>
+					</Container>
+				</Navbar.Brand>
+
+				<Navbar.Brand href="/">
+					<Container>
+						<Typography variant="h6" component="h6">
+							{siteName}
+						</Typography>
+					</Container>
+				</Navbar.Brand>
+
+				<Navbar.Brand href="/">
+					<Container>
+						<Typography variant="h6" component="h6">
+							{siteName}
+						</Typography>
+					</Container>
+				</Navbar.Brand>
+
+				<select
+					className="custom-select"
+					value={props.language}
+					onChange={(e) => props.handleSetLanguage(e.target.value)}
+				>
+					<option value="English">English</option>
+					<option value="Swedish">Svenska</option>
+					<option value="Polish">Polski</option>
+				</select>
 
 				{user ? (
 					<>
