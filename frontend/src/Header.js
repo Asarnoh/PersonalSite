@@ -21,7 +21,9 @@ const projects_EN = "Projects";
 const projects_SE = "Projekt";
 const projects_PL = "Projekty";
 
-
+const contact_EN = "Contact me";
+const contact_SE = "Projekt";
+const contact_PL = "Projekty";
 
 export function Header(props) {
 	const __selector = useSelector((state) => state.authReducer);
@@ -50,7 +52,7 @@ export function Header(props) {
 
 	return (
 		<>
-			<Navbar bg="light" variant="light" fixed="top">
+			<Navbar bg="dark" variant="dark" fixed="top">
 				<Navbar.Brand href="/">
 					<Container>
 						{/* <img src={logo} width="50" height="50" alt="" /> */}
@@ -60,34 +62,26 @@ export function Header(props) {
 					</Container>
 				</Navbar.Brand>
 
-				<Navbar.Brand href="/">
+				<Navbar.Brand href="/about">
 					<Container>
 						<Typography variant="h6" component="h6">
-							{siteName}
+							{aboutMe_EN}
 						</Typography>
 					</Container>
 				</Navbar.Brand>
 
-				<Navbar.Brand href="/">
+				<Navbar.Brand href="/projects">
 					<Container>
 						<Typography variant="h6" component="h6">
-							{siteName}
+							{projects_EN}
 						</Typography>
 					</Container>
 				</Navbar.Brand>
 
-				<Navbar.Brand href="/">
+				<Navbar.Brand href="/contact">
 					<Container>
 						<Typography variant="h6" component="h6">
-							{siteName}
-						</Typography>
-					</Container>
-				</Navbar.Brand>
-
-				<Navbar.Brand href="/">
-					<Container>
-						<Typography variant="h6" component="h6">
-							{siteName}
+							{contact_EN}
 						</Typography>
 					</Container>
 				</Navbar.Brand>
@@ -97,9 +91,9 @@ export function Header(props) {
 					value={props.language}
 					onChange={(e) => props.handleSetLanguage(e.target.value)}
 				>
-					<option value="English">English</option>
-					<option value="Swedish">Svenska</option>
-					<option value="Polish">Polski</option>
+					<option value="English">ᛖᚾ 🇺🇸</option>
+					<option value="Swedish">ᛊᛖ 🇸🇪</option>
+					<option value="Polish">ᛈᛚ 🇵🇱</option>
 				</select>
 
 				{user ? (

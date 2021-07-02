@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Kofi() {
 	return (
 		<p>
-			<KoFi color="#29abe0" id="O4O63QXRQ" label="Tip me" />
+			<KoFi color="#29abe0" id="O4O63QXRQ" label=" Tip me " />
 		</p>
 	);
 }
