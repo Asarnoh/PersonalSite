@@ -60,7 +60,6 @@ export function Header(props) {
 						</Typography> */}
 					</Container>
 				</Navbar.Brand>
-
 				<Navbar.Brand href="/about">
 					<Container>
 						<Typography variant="h6" component="h6">
@@ -68,7 +67,6 @@ export function Header(props) {
 						</Typography>
 					</Container>
 				</Navbar.Brand>
-
 				<Navbar.Brand href="/projects">
 					<Container>
 						<Typography variant="h6" component="h6">
@@ -76,7 +74,6 @@ export function Header(props) {
 						</Typography>
 					</Container>
 				</Navbar.Brand>
-
 				<Navbar.Brand href="/contact">
 					<Container>
 						<Typography variant="h6" component="h6">
@@ -84,7 +81,6 @@ export function Header(props) {
 						</Typography>
 					</Container>
 				</Navbar.Brand>
-
 				<select
 					className="custom-select"
 					value={props.language}
@@ -94,7 +90,7 @@ export function Header(props) {
 					<option value="Swedish">ᛊᛖ 🇸🇪</option>
 					<option value="Polish">ᛈᛚ 🇵🇱</option>
 				</select>
-
+				
 				{user ? (
 					<>
 						<Avatar

@@ -14,7 +14,7 @@ import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { signup, signin } from "./actions/auth";
-import volvo_tlo from "./images/DSC_8173.JPG";
+import volvo_tlo from "./images/img_scania_volvo.JPG";
 
 const initialUserState = {
 	firstName: "",
