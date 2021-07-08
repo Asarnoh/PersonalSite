@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -5,9 +6,7 @@ import { Avatar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-// import logo from "./images/logo_hagalaz.png";
+import logo from "./images/logo.gif";
 
 // https://www.techomoro.com/how-to-create-a-simple-multi-language-website-with-react/
 
@@ -55,10 +54,10 @@ export function Header(props) {
 			<Navbar bg="dark" variant="dark" fixed="top">
 				<Navbar.Brand href="/">
 					<Container>
-						{/* <img src={logo} width="50" height="50" alt="" /> */}
-						<Typography variant="h4" component="h4">
+						<img src={logo} width="50" height="50" alt="" />
+						{/* <Typography variant="h4" component="h4">
 							{siteName}
-						</Typography>
+						</Typography> */}
 					</Container>
 				</Navbar.Brand>
 
@@ -128,7 +127,7 @@ export function Header(props) {
 					<>
 						<Button
 							style={{ position: "absolute", right: "10px" }}
-							variant="dark"
+							variant="light"
 							size="lg"
 							active
 							onClick={() => {}}

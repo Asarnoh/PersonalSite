@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -6,10 +7,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import KoFi from "./KofiButton";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-// import logo from "./images/logo_hagalaz.png";
+import logo from "./images/logo.gif";
 
 function Kofi() {
 	return (
@@ -32,9 +30,8 @@ export function Footer() {
 
 	return (
 		<Navbar fixed="bottom" bg="light">
-			<Container
-				style={{ paddingTop: 15, paddingLeft: 15, paddingRight: 15 }}
-			>
+			<Container style={{ paddingRight: 15 }}>
+				<img src={logo} width="50" height="50" alt="" />
 				<Typography variant="h6" component="h6">
 					{siteName}
 				</Typography>
